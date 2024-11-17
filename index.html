@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIYEEE!!! KENA DEFACE</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #33FF00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            animation: bg-flicker 0.1s infinite alternate;
+        }
+
+        @keyframes bg-flicker {
+            0% { background-color: #000; }
+            100% { background-color: #003300; }
+        }
+
+        .terminal {
+            background-color: #111;
+            border: 3px solid #33FF00;
+            padding: 40px;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 0 35px rgba(0, 255, 0, 0.8);
+            border-radius: 15px;
+            margin-bottom: 50px;
+            animation: flicker-text 0.1s infinite alternate, terminal-glow 0.3s infinite alternate;
+        }
+
+        @keyframes flicker-text {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes terminal-glow {
+            0% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.8); }
+            100% { box-shadow: 0 0 35px rgba(0, 255, 0, 1); }
+        }
+
+        .terminal h1 {
+            font-size: 3.2em;
+            font-weight: bold;
+            color: #33FF00;
+            margin: 0;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
+        }
+
+        .terminal p {
+            font-size: 1.8em;
+            color: #33FF00;
+            line-height: 1.6;
+            margin-top: 10px;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 70px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            color: #FF0000;
+            animation: footer-flicker 0.2s infinite alternate, footer-glow 0.3s infinite alternate;
+        }
+
+        @keyframes footer-flicker {
+            0% { opacity: 0.9; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes footer-glow {
+            0% { text-shadow: 0 0 15px rgba(255, 0, 0, 0.9); }
+            100% { text-shadow: 0 0 25px rgba(255, 0, 0, 1); }
+        }
+
+        .by {
+            font-size: 1.5em;
+            color: #FF0000;
+            font-weight: bold;
+            position: fixed;
+            bottom: 30px;
+            text-align: center;
+            width: 100%;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        .extra {
+            font-size: 1.3em;
+            color: #FF0000;
+            font-weight: bold;
+            position: fixed;
+            bottom: 60px;
+            text-align: center;
+            width: 100%;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+            margin-top: 0;
+        }
+
+        .glitch {
+            animation: glitch 0.2s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(0, 255, 0, 0.7); }
+            50% { text-shadow: 0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(0, 255, 0, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(0, 255, 0, 0.7); }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <h1 class="glitch">CIYEEE!!! KENA DEFACE</h1>
+        <p class="glitch">dari sini kita paham bahwa pemerintah ga becus buat keamanan website</p>
+    </div>
+    <div class="footer">
+        <p class="glitch">-- SYSTEM HACKED --</p>
+    </div>
+    <div class="by">
+        <p>by MR.WHYOU</p>
+    </div>
+    <div class="extra">
+        <p>sama hp kok kalah</p>
+    </div>
+    <script>
+        let counter = 0;
+        setInterval(() => {
+            const flicker = document.querySelector('.footer');
+            if (counter % 2 === 0) {
+                flicker.style.color = '#FF0000';
+            } else {
+                flicker.style.color = '#33FF00';
+            }
+            counter++;
+        }, 500);
+    </script>
+</body>
+</html>
